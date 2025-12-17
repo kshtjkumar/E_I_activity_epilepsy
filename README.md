@@ -44,7 +44,7 @@ Data files should be placed in the `data/` directory. Please refer to the data d
 If you use this code in your research, please cite our paper:
 
 ```
-Network level shifts in E/I balance during chronic epilepsy revealed by aperiodic EEG dynamics
+"Network level shifts in E/I balance during chronic epilepsy revealed by aperiodic EEG dynamics"
 [Authors and publication details to be added]
 ```
 

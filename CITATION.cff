@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
-title: "Network level shifts in E/I balance during chronic epilepsy revealed by aperiodic EEG dynamics - Analysis Code"
+title: "E/I Balance Epilepsy Analysis Code"
 type: software
 authors:
   - family-names: "Kumar"
