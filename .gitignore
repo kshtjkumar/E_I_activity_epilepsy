@@ -34,6 +34,8 @@ ENV/
 *.ipynb_checkpoints/
 
 # Data files (large binary files)
+data/*
+!data/README.md
 *.mat
 *.npy
 *.npz

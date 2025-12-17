@@ -2,13 +2,15 @@
 
 This directory contains MATLAB analysis scripts for EEG/ECoG spectral analysis and the spectral parameterization pipeline.
 
-## Author
+## Authors
 
-Kshitij Kumar
+Garima Chauhan¹, Kshitij Kumar¹, Deepti Chugh¹, Subramaniam Ganesh¹, Arjun Ramakrishnan¹,²,#
 
-**Affiliation:**
-- Department of Biological Sciences & Bioengineering, IIT Kanpur
+**Affiliations:**
+- ¹Department of Biological Sciences & Bioengineering, IIT Kanpur
+- ²Mehta Family Centre for Engineering in Medicine, IIT Kanpur
 - Uttar Pradesh, India, 208016
+- # Corresponding Author: Arjun Ramakrishnan
 
 ---
 
@@ -16,9 +18,33 @@ Kshitij Kumar
 
 This directory contains MATLAB scripts for analyzing EEG/ECoG data with a focus on spectral parameterization to separate aperiodic (1/f background) and periodic (oscillatory) components. The pipeline processes raw EDF files through spectral analysis and exports results for further statistical analysis.
 
+## Analysis Pipeline Overview
+
+```
+Raw EDF Files 
+     ↓
+[01_edf_import_and_preprocess.m]
+     ↓
+Brainstorm Database
+     ↓
+[02_spectral_parameterization.m]
+     ↓
+Spectral Parameters (aperiodic + periodic)
+     ↓
+[03_extract_central_frequencies.m]
+     ↓
+Peak Frequencies by Band
+     ↓
+[04_merge_quality_metrics.m]
+     ↓
+Final Results (with R² quality metrics)
+     ↓
+[05_batch_process_subjects.m] (optional consolidation)
+```
+
 ## Scripts Description
 
-### 1. `config_template.m`
+### `config_template.m`
 **Purpose:** Configuration template for setting up analysis paths and parameters.
 
 **Description:** Provides a template configuration file with all necessary paths and analysis parameters. Users should copy this to `config.m` and modify for their local setup.
@@ -36,14 +62,45 @@ This directory contains MATLAB scripts for analyzing EEG/ECoG data with a focus 
 config = config_template();
 ```
 
-### 2. `central_frequency_csv.m`
+### `01_edf_import_and_preprocess.m`
+**Purpose:** Load and process EDF (European Data Format) files using Brainstorm.
+
+**Description:** Imports EDF files containing EEG/ECoG recordings into Brainstorm for preprocessing and analysis. Handles time segmentation and prepares data for spectral analysis.
+
+**Usage:**
+```matlab
+% Use defaults
+edf_load();
+
+% Specify data folder and subject ID
+edf_load('/path/to/edf/files', 'SubjectID');
+```
+
+**Note:** Requires Brainstorm toolbox to be installed and in MATLAB path.
+
+### `02_spectral_parameterization.m`
+**Purpose:** Perform spectral parameterization and export to CSV.
+
+**Description:** Implements spectral parameterization to separate power spectra into aperiodic (1/f background) and periodic (oscillatory peaks) components. Fits aperiodic component and identifies oscillatory peaks.
+
+**Outputs:**
+- `aperiodic_parameters.csv`: Exponent, offset, R² for each recording
+- `periodic_parameters.csv`: Peak frequencies, powers, and bandwidths
+- Summary statistics file
+
+**Usage:**
+```matlab
+% Use default paths
+specparam_to_csv_brainstorm_loaded();
+
+% Specify custom paths
+specparam_to_csv_brainstorm_loaded('/path/to/brainstorm/data', '/path/to/output');
+```
+
+### `03_extract_central_frequencies.m`
 **Purpose:** Extract central frequency measures from spectral data and export to CSV.
 
 **Description:** Processes MAT files containing spectral analysis results, identifies central (peak) frequencies in power spectra, and exports measures to CSV format for statistical analysis.
-
-**Inputs:**
-- Base folder containing subject subdirectories with MAT files
-- Each MAT file should contain power spectrum and frequency data
 
 **Outputs:**
 - CSV files (one per subject) with central frequency measures
@@ -58,60 +115,10 @@ central_frequency_csv();
 central_frequency_csv('/path/to/your/data');
 ```
 
-### 3. `edf_load.m`
-**Purpose:** Load and process EDF (European Data Format) files using Brainstorm.
-
-**Description:** Imports EDF files containing EEG/ECoG recordings into Brainstorm for preprocessing and analysis. Handles time segmentation and prepares data for spectral analysis.
-
-**Inputs:**
-- Data folder containing EDF files
-- Subject ID (optional)
-
-**Outputs:**
-- Brainstorm database entries with imported raw data
-- Segmented data ready for spectral analysis
-
-**Usage:**
-```matlab
-% Use defaults
-edf_load();
-
-% Specify data folder and subject ID
-edf_load('/path/to/edf/files', 'SubjectID');
-```
-
-**Note:** Requires Brainstorm toolbox to be installed and in MATLAB path.
-
-### 4. `mat_file_reading_script_new.m`
-**Purpose:** Batch read and consolidate MAT files from multiple subjects.
-
-**Description:** Reads processed MAT files from subject folders, extracts relevant features and metadata, and consolidates into a single data structure for cross-subject analysis.
-
-**Inputs:**
-- Data path with subject subdirectories
-- Each subject folder contains MAT files with processed data
-
-**Outputs:**
-- Consolidated MAT file with all subjects' data
-- CSV summary report with processing statistics
-
-**Usage:**
-```matlab
-% Use default paths
-mat_file_reading_script_new();
-
-% Specify custom paths
-mat_file_reading_script_new('/path/to/data', '/path/to/output');
-```
-
-### 5. `mergeR2_central_Frequency.m`
+### `04_merge_quality_metrics.m`
 **Purpose:** Merge spectral fitting R² values with central frequency measures.
 
 **Description:** Combines goodness-of-fit metrics (R²) from aperiodic spectral fitting with central frequency measures for comprehensive quality assessment and analysis.
-
-**Inputs:**
-- Data path containing subject folders
-- Each folder should have R² values and central frequency files
 
 **Outputs:**
 - Merged CSV files per subject
@@ -127,27 +134,22 @@ mergeR2_central_Frequency();
 mergeR2_central_Frequency('/path/to/data');
 ```
 
-### 6. `specparam_to_csv_brainstorm_loaded.m`
-**Purpose:** Perform spectral parameterization and export to CSV.
+### `05_batch_process_subjects.m`
+**Purpose:** Batch read and consolidate MAT files from multiple subjects.
 
-**Description:** Implements spectral parameterization to separate power spectra into aperiodic (1/f background) and periodic (oscillatory peaks) components. Fits aperiodic component and identifies oscillatory peaks.
-
-**Inputs:**
-- Base folder with Brainstorm-processed spectral data (MAT files)
-- Output folder for CSV results (optional)
+**Description:** Reads processed MAT files from subject folders, extracts relevant features and metadata, and consolidates into a single data structure for cross-subject analysis.
 
 **Outputs:**
-- `aperiodic_parameters.csv`: Exponent, offset, R² for each recording
-- `periodic_parameters.csv`: Peak frequencies, powers, and bandwidths
-- Summary statistics file
+- Consolidated MAT file with all subjects' data
+- CSV summary report with processing statistics
 
 **Usage:**
 ```matlab
 % Use default paths
-specparam_to_csv_brainstorm_loaded();
+mat_file_reading_script_new();
 
 % Specify custom paths
-specparam_to_csv_brainstorm_loaded('/path/to/brainstorm/data', '/path/to/output');
+mat_file_reading_script_new('/path/to/data', '/path/to/output');
 ```
 
 ---
@@ -223,26 +225,31 @@ brainstorm nogui
 
 1. **Import EDF Files** (if starting from raw data)
    ```matlab
+   % Script: 01_edf_import_and_preprocess.m
    edf_load('/path/to/edf/files', 'SubjectID');
    ```
 
 2. **Process Spectral Data** (after Brainstorm preprocessing)
    ```matlab
+   % Script: 02_spectral_parameterization.m
    specparam_to_csv_brainstorm_loaded('/path/to/brainstorm/data');
    ```
 
 3. **Extract Central Frequencies**
    ```matlab
+   % Script: 03_extract_central_frequencies.m
    central_frequency_csv('/path/to/data');
    ```
 
 4. **Merge Quality Metrics**
    ```matlab
+   % Script: 04_merge_quality_metrics.m
    mergeR2_central_Frequency('/path/to/data');
    ```
 
-5. **Consolidate Results**
+5. **Consolidate Results** (optional)
    ```matlab
+   % Script: 05_batch_process_subjects.m
    mat_file_reading_script_new('/path/to/data', '/path/to/results');
    ```
 

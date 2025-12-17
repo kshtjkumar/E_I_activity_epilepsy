@@ -1,12 +1,14 @@
 # Setup Guide for EEG Analysis Pipeline
 
-## Author
+## Authors
 
-Kshitij Kumar
+Garima Chauhan¹, Kshitij Kumar¹, Deepti Chugh¹, Subramaniam Ganesh¹, Arjun Ramakrishnan¹,²,#
 
-**Affiliation:**
-- Department of Biological Sciences & Bioengineering, IIT Kanpur
+**Affiliations:**
+- ¹Department of Biological Sciences & Bioengineering, IIT Kanpur
+- ²Mehta Family Centre for Engineering in Medicine, IIT Kanpur
 - Uttar Pradesh, India, 208016
+- # Corresponding Author: Arjun Ramakrishnan
 
 ---
 
@@ -329,17 +331,18 @@ addpath(genpath(pwd));
 subjectID = 'Subject01';
 subjectPath = fullfile(config.dataPath, subjectID);
 
-% If starting from EDF files
+% If starting from EDF files (Script: 01_edf_import_and_preprocess.m)
 edf_load(subjectPath, subjectID);
 
 % After Brainstorm processing, run spectral parameterization
+% (Script: 02_spectral_parameterization.m)
 specparam_to_csv_brainstorm_loaded(subjectPath, ...
     fullfile(config.outputPath, 'spectral_params'));
 
-% Extract central frequencies
+% Extract central frequencies (Script: 03_extract_central_frequencies.m)
 central_frequency_csv(subjectPath);
 
-% Merge with quality metrics
+% Merge with quality metrics (Script: 04_merge_quality_metrics.m)
 mergeR2_central_Frequency(config.dataPath);
 ```
 
@@ -369,10 +372,10 @@ for i = 1:length(subjects)
         end
         
         % Run analysis pipeline
-        % 1. Spectral parameterization
+        % 1. Spectral parameterization (02_spectral_parameterization.m)
         specparam_to_csv_brainstorm_loaded(subjectPath, outputPath);
         
-        % 2. Central frequency extraction
+        % 2. Central frequency extraction (03_extract_central_frequencies.m)
         central_frequency_csv(subjectPath);
         
         fprintf('✓ Completed %s\n', subjectID);
@@ -383,7 +386,7 @@ for i = 1:length(subjects)
     end
 end
 
-% Final step: Merge all results
+% Final step: Merge all results (04_merge_quality_metrics.m)
 fprintf('\n=== Merging all results ===\n');
 mergeR2_central_Frequency(config.dataPath);
 fprintf('Pipeline complete!\n');
@@ -427,7 +430,9 @@ function processSubject(subjectID, config)
     end
     
     try
+        % 02_spectral_parameterization.m
         specparam_to_csv_brainstorm_loaded(subjectPath, outputPath);
+        % 03_extract_central_frequencies.m
         central_frequency_csv(subjectPath);
         fprintf('✓ Completed %s\n', subjectID);
     catch ME

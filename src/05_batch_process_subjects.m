@@ -1,42 +1,26 @@
-% MAT File Reading and Processing Script
+% 05 - Batch Process Subjects
 %
-% Author: Kshitij Kumar
-% Department of Biological Sciences & Bioengineering, IIT Kanpur
-% Uttar Pradesh, India, 208016
+% Authors: Garima Chauhan¹, Kshitij Kumar¹, Deepti Chugh¹, 
+%          Subramaniam Ganesh¹, Arjun Ramakrishnan¹,²,#
+%
+% Affiliations:
+%   ¹Department of Biological Sciences & Bioengineering, IIT Kanpur
+%   ²Mehta Family Centre for Engineering in Medicine, IIT Kanpur
+%   Uttar Pradesh, India, 208016
+%   # Corresponding Author: Arjun Ramakrishnan
 %
 % Description:
 %   Reads MAT files containing processed EEG data and extracts relevant
-%   features for further analysis. Handles multiple subjects and conditions,
-%   organizing data for statistical analysis and visualization.
-%
-% Input:
-%   - dataPath: Path to directory containing subject folders with MAT files
-%   - outputPath: Path where processed results will be saved
-%
-% Output:
-%   - Consolidated MAT file with extracted features
-%   - CSV files with summary statistics
-%   - Processed data structure for downstream analysis
+%   features for batch analysis. Consolidates data from multiple subjects
+%   for statistical analysis and visualization.
 %
 % Usage:
 %   mat_file_reading_script_new();
 %   % Or with custom paths:
 %   mat_file_reading_script_new('/path/to/data', '/path/to/output');
 %
-% File Organization:
-%   Expected directory structure:
-%   dataPath/
-%     ├── Subject01/
-%     │   ├── data_file1.mat
-%     │   └── data_file2.mat
-%     ├── Subject02/
-%     │   ├── data_file1.mat
-%     │   └── data_file2.mat
-%     └── ...
-%
 % Dependencies:
-%   - MATLAB base installation
-%   - Statistics and Machine Learning Toolbox (optional, for advanced stats)
+%   - MATLAB Statistics and Machine Learning Toolbox
 
 function mat_file_reading_script_new(dataPath, outputPath)
     % Analysis parameters

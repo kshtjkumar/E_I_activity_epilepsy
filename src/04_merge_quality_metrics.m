@@ -1,36 +1,27 @@
-% Merge R² Values with Central Frequency Measures
+% 04 - Merge Quality Metrics
 %
-% Author: Kshitij Kumar
-% Department of Biological Sciences & Bioengineering, IIT Kanpur
-% Uttar Pradesh, India, 208016
+% Authors: Garima Chauhan¹, Kshitij Kumar¹, Deepti Chugh¹, 
+%          Subramaniam Ganesh¹, Arjun Ramakrishnan¹,²,#
+%
+% Affiliations:
+%   ¹Department of Biological Sciences & Bioengineering, IIT Kanpur
+%   ²Mehta Family Centre for Engineering in Medicine, IIT Kanpur
+%   Uttar Pradesh, India, 208016
+%   # Corresponding Author: Arjun Ramakrishnan
 %
 % Description:
 %   Merges goodness-of-fit (R²) values from spectral parameterization
 %   with central frequency measures. Combines aperiodic fitting metrics
-%   with periodic component characteristics for comprehensive spectral
-%   analysis.
-%
-% Input:
-%   - dataPath: Path to directory containing subject data with R² and
-%               central frequency files
-%
-% Output:
-%   - Merged CSV files combining R² and central frequency for each subject
-%   - Summary statistics across all subjects
+%   with periodic component characteristics for comprehensive quality
+%   assessment.
 %
 % Usage:
 %   mergeR2_central_Frequency();
 %   % Or with custom data path:
 %   mergeR2_central_Frequency('/path/to/data');
 %
-% File Requirements:
-%   Each subject folder should contain:
-%     - *_r2_values.mat or *_r2_values.csv (R² goodness-of-fit values)
-%     - *_central_frequency.mat or *_central_frequency.csv (central frequencies)
-%
 % Dependencies:
-%   - MATLAB base installation
-%   - Statistics and Machine Learning Toolbox (for correlation analysis)
+%   - MATLAB Statistics and Machine Learning Toolbox
 
 function mergeR2_central_Frequency(dataPath)
     % Analysis parameters
