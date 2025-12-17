@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "E/I Activity in Epilepsy - Analysis Code"
+type: software
+authors:
+  - family-names: "Kumar"
+    given-names: "Kshtj"
+    # Add ORCID if available: orcid: "https://orcid.org/0000-0000-0000-0000"
+repository-code: "https://github.com/kshtjkumar/E_I_activity_epilepsy"
+license: MIT
+# Add these fields when your paper is published:
+# doi: "10.XXXX/XXXXX"
+# date-released: "YYYY-MM-DD"
+# version: "1.0.0"
+# preferred-citation:
+#   type: article
+#   authors:
+#     - family-names: "Kumar"
+#       given-names: "Kshtj"
+#   title: "Your Paper Title"
+#   journal: "Journal Name"
+#   year: YYYY
+#   doi: "10.XXXX/XXXXX"
