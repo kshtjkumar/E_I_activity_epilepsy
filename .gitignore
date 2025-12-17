@@ -62,3 +62,14 @@ tmp/
 temp/
 *.tmp
 *.log
+
+# MATLAB
+# Local configuration file (contains user-specific paths)
+src/config.m
+
+# Brainstorm database
+brainstorm_db/
+
+# MATLAB autosave and temporary files
+*.asv
+*.m~
