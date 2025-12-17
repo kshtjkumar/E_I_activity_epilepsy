@@ -3,9 +3,21 @@ message: "If you use this software, please cite it as below."
 title: "Network level shifts in E/I balance during chronic epilepsy revealed by aperiodic EEG dynamics - Analysis Code"
 type: software
 authors:
+  - family-names: "Chauhan"
+    given-names: "Garima"
+    affiliation: "Department of Biological Sciences & Bioengineering, Indian Institute of Technology Kanpur, Uttar Pradesh, India, 208016"
   - family-names: "Kumar"
-    given-names: "Kshtj"
-    # Add ORCID if available: orcid: "https://orcid.org/0000-0000-0000-0000"
+    given-names: "Kshitij"
+    affiliation: "Department of Biological Sciences & Bioengineering, Indian Institute of Technology Kanpur, Uttar Pradesh, India, 208016"
+  - family-names: "Chugh"
+    given-names: "Deepti"
+    affiliation: "Department of Biological Sciences & Bioengineering, Indian Institute of Technology Kanpur, Uttar Pradesh, India, 208016"
+  - family-names: "Ganesh"
+    given-names: "Subramaniam"
+    affiliation: "Department of Biological Sciences & Bioengineering, Indian Institute of Technology Kanpur, Uttar Pradesh, India, 208016"
+  - family-names: "Ramakrishnan"
+    given-names: "Arjun"
+    affiliation: "Department of Biological Sciences & Bioengineering, Mehta Family Centre for Engineering in Medicine, Indian Institute of Technology Kanpur, Uttar Pradesh, India, 208016"
 repository-code: "https://github.com/kshtjkumar/E_I_activity_epilepsy"
 license: MIT
 # Add these fields when your paper is published:
@@ -15,8 +27,21 @@ license: MIT
 preferred-citation:
   type: article
   authors:
+    - family-names: "Chauhan"
+      given-names: "Garima"
+      affiliation: "Department of Biological Sciences & Bioengineering, Indian Institute of Technology Kanpur, Uttar Pradesh, India, 208016"
     - family-names: "Kumar"
-      given-names: "Kshtj"
+      given-names: "Kshitij"
+      affiliation: "Department of Biological Sciences & Bioengineering, Indian Institute of Technology Kanpur, Uttar Pradesh, India, 208016"
+    - family-names: "Chugh"
+      given-names: "Deepti"
+      affiliation: "Department of Biological Sciences & Bioengineering, Indian Institute of Technology Kanpur, Uttar Pradesh, India, 208016"
+    - family-names: "Ganesh"
+      given-names: "Subramaniam"
+      affiliation: "Department of Biological Sciences & Bioengineering, Indian Institute of Technology Kanpur, Uttar Pradesh, India, 208016"
+    - family-names: "Ramakrishnan"
+      given-names: "Arjun"
+      affiliation: "Department of Biological Sciences & Bioengineering, Mehta Family Centre for Engineering in Medicine, Indian Institute of Technology Kanpur, Uttar Pradesh, India, 208016"
   title: "Network level shifts in E/I balance during chronic epilepsy revealed by aperiodic EEG dynamics"
   # journal: "Journal Name"
   # year: YYYY

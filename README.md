@@ -45,7 +45,13 @@ If you use this code in your research, please cite our paper:
 
 ```
 Network level shifts in E/I balance during chronic epilepsy revealed by aperiodic EEG dynamics
-[Authors and publication details to be added]
+
+Garima Chauhan¹, Kshitij Kumar¹, Deepti Chugh¹, Subramaniam Ganesh¹, Arjun Ramakrishnan¹,²,#
+
+¹Department of Biological Sciences & Bioengineering, 
+²Mehta Family Centre for Engineering in Medicine, Indian Institute of Technology Kanpur, 
+Uttar Pradesh, India, 208016
+# corresponding author
 ```
 
 ## License
@@ -54,7 +60,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-For questions or issues, please open an issue on GitHub or contact the authors.
+For questions or issues, please open an issue on GitHub or contact the corresponding author, Arjun Ramakrishnan, at the Indian Institute of Technology Kanpur.
 
 ## Acknowledgments
 

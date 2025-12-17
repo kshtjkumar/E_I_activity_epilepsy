@@ -22,4 +22,4 @@ If you find issues or have suggestions for improvements:
 
 ## Questions
 
-If you have questions about the research or code, please open an issue on GitHub.
+If you have questions about the research or code, please open an issue on GitHub or contact the corresponding author, Arjun Ramakrishnan, at the Indian Institute of Technology Kanpur.
