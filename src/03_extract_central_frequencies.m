@@ -1,21 +1,18 @@
-% Central Frequency CSV Export
+% 03 - Extract Central Frequencies
 %
-% Author: Kshitij Kumar
-% Department of Biological Sciences & Bioengineering, IIT Kanpur
-% Uttar Pradesh, India, 208016
+% Authors: Garima Chauhan¹, Kshitij Kumar¹, Deepti Chugh¹, 
+%          Subramaniam Ganesh¹, Arjun Ramakrishnan¹,²,#
+%
+% Affiliations:
+%   ¹Department of Biological Sciences & Bioengineering, IIT Kanpur
+%   ²Mehta Family Centre for Engineering in Medicine, IIT Kanpur
+%   Uttar Pradesh, India, 208016
+%   # Corresponding Author: Arjun Ramakrishnan
 %
 % Description:
 %   Processes spectral analysis results from subject folders and exports
-%   central frequency measures to CSV files. Extracts aperiodic and periodic
-%   components from power spectral density data.
-%
-% Input:
-%   - baseFolder: Path to directory containing subject folders
-%   - Each subject folder should contain MAT files with spectral data
-%
-% Output:
-%   - CSV files with central frequency measures for each subject
-%   - One CSV per subject containing frequency band characteristics
+%   central frequency measures to CSV files. Extracts peak frequencies
+%   and band characteristics from power spectral density data.
 %
 % Usage:
 %   central_frequency_csv();

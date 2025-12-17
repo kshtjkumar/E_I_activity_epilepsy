@@ -15,10 +15,17 @@ If you find issues or have suggestions for improvements:
 
 ## Code Style
 
-- Follow PEP 8 guidelines for Python code
-- Use meaningful variable and function names
+- Follow MATLAB coding best practices
+- Use meaningful variable and function names (camelCase for variables, descriptive names for functions)
 - Add comments to explain complex logic
-- Include docstrings for functions and classes
+- Include header documentation for all functions with:
+  - Description of what the function does
+  - Input parameters and their types
+  - Output parameters and their types
+  - Usage examples
+  - Dependencies
+- Use consistent indentation (4 spaces recommended)
+- Keep functions modular and focused on single tasks
 
 ## Questions
 

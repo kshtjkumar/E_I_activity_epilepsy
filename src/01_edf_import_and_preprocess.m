@@ -1,21 +1,18 @@
-% EDF File Loading and Brainstorm Processing
+% 01 - EDF Import and Preprocess
 %
-% Author: Kshitij Kumar
-% Department of Biological Sciences & Bioengineering, IIT Kanpur
-% Uttar Pradesh, India, 208016
+% Authors: Garima Chauhan¹, Kshitij Kumar¹, Deepti Chugh¹, 
+%          Subramaniam Ganesh¹, Arjun Ramakrishnan¹,²,#
+%
+% Affiliations:
+%   ¹Department of Biological Sciences & Bioengineering, IIT Kanpur
+%   ²Mehta Family Centre for Engineering in Medicine, IIT Kanpur
+%   Uttar Pradesh, India, 208016
+%   # Corresponding Author: Arjun Ramakrishnan
 %
 % Description:
 %   Loads EDF (European Data Format) files and processes them using the
 %   Brainstorm toolbox for neurophysiological signal analysis. Handles
 %   time segmentation and spectral analysis preparation.
-%
-% Input:
-%   - dataFolder: Path to directory containing EDF files
-%   - subjectID: Identifier for the subject (optional, defaults to 'Subject')
-%
-% Output:
-%   - Processed data files in Brainstorm database format
-%   - MAT files with spectral analysis results
 %
 % Usage:
 %   edf_load();
@@ -25,12 +22,6 @@
 % Dependencies:
 %   - Brainstorm toolbox (https://neuroimage.usc.edu/brainstorm/)
 %   - MATLAB Signal Processing Toolbox
-%
-% Processing Steps:
-%   1. Load EDF file using Brainstorm's import functions
-%   2. Segment data into analysis windows
-%   3. Apply preprocessing (filtering, artifact removal)
-%   4. Prepare for spectral analysis
 
 function edf_load(dataFolder, subjectID)
     % Analysis constants

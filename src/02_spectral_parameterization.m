@@ -1,40 +1,27 @@
-% Spectral Parameterization to CSV - Brainstorm Loaded Data
+% 02 - Spectral Parameterization
 %
-% Author: Kshitij Kumar
-% Department of Biological Sciences & Bioengineering, IIT Kanpur
-% Uttar Pradesh, India, 208016
+% Authors: Garima Chauhan¹, Kshitij Kumar¹, Deepti Chugh¹, 
+%          Subramaniam Ganesh¹, Arjun Ramakrishnan¹,²,#
+%
+% Affiliations:
+%   ¹Department of Biological Sciences & Bioengineering, IIT Kanpur
+%   ²Mehta Family Centre for Engineering in Medicine, IIT Kanpur
+%   Uttar Pradesh, India, 208016
+%   # Corresponding Author: Arjun Ramakrishnan
 %
 % Description:
 %   Processes spectral parameterization results from Brainstorm-loaded data
 %   and exports them to CSV format. Separates aperiodic (1/f background) and
 %   periodic (oscillatory) components of the power spectrum for further analysis.
-%   This script implements the spectral parameterization approach to characterize
-%   neural power spectra.
-%
-% Input:
-%   - baseFolder: Path to directory containing Brainstorm processed data
-%   - outputFolder: Path where CSV results will be saved (optional)
-%
-% Output:
-%   - CSV files with aperiodic parameters (exponent, offset)
-%   - CSV files with periodic parameters (peak frequency, power, bandwidth)
-%   - Summary statistics across all analyzed data
 %
 % Usage:
 %   specparam_to_csv_brainstorm_loaded();
 %   % Or with custom paths:
 %   specparam_to_csv_brainstorm_loaded('/path/to/brainstorm/data', '/path/to/output');
 %
-% Analysis Steps:
-%   1. Load Brainstorm processed spectral data
-%   2. Extract power spectral density (PSD) estimates
-%   3. Fit aperiodic component (1/f background)
-%   4. Identify and characterize periodic peaks
-%   5. Export parameters to CSV format
-%
 % Dependencies:
 %   - Brainstorm toolbox (https://neuroimage.usc.edu/brainstorm/)
-%   - MATLAB Curve Fitting Toolbox (for spectral fitting)
+%   - MATLAB Curve Fitting Toolbox
 %   - MATLAB Signal Processing Toolbox
 
 function specparam_to_csv_brainstorm_loaded(baseFolder, outputFolder)
