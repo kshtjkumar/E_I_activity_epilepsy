@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
-title: "E/I Activity in Epilepsy - Analysis Code"
+title: "Network level shifts in E/I balance during chronic epilepsy revealed by aperiodic EEG dynamics - Analysis Code"
 type: software
 authors:
   - family-names: "Kumar"
@@ -12,12 +12,12 @@ license: MIT
 # doi: "10.XXXX/XXXXX"
 # date-released: "YYYY-MM-DD"
 # version: "1.0.0"
-# preferred-citation:
-#   type: article
-#   authors:
-#     - family-names: "Kumar"
-#       given-names: "Kshtj"
-#   title: "Your Paper Title"
-#   journal: "Journal Name"
-#   year: YYYY
-#   doi: "10.XXXX/XXXXX"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Kumar"
+      given-names: "Kshtj"
+  title: "Network level shifts in E/I balance during chronic epilepsy revealed by aperiodic EEG dynamics"
+  # journal: "Journal Name"
+  # year: YYYY
+  # doi: "10.XXXX/XXXXX"

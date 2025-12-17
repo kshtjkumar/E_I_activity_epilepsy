@@ -1,10 +1,10 @@
-# E/I Activity in Epilepsy
+# Network Level Shifts in E/I Balance During Chronic Epilepsy Revealed by Aperiodic EEG Dynamics
 
-This repository contains code and analysis scripts for research on Excitatory/Inhibitory (E/I) activity in epilepsy.
+This repository contains code and analysis scripts for the paper "Network level shifts in E/I balance during chronic epilepsy revealed by aperiodic EEG dynamics".
 
 ## Overview
 
-This repository hosts the computational analysis code and tools used in our research paper investigating the balance between excitatory and inhibitory neural activity in epileptic brain networks.
+This repository hosts the computational analysis code and tools used in our research investigating network level shifts in the balance between excitatory and inhibitory (E/I) neural activity during chronic epilepsy, revealed through aperiodic EEG dynamics.
 
 ## Repository Structure
 
@@ -44,7 +44,8 @@ Data files should be placed in the `data/` directory. Please refer to the data d
 If you use this code in your research, please cite our paper:
 
 ```
-[Citation information to be added]
+Network level shifts in E/I balance during chronic epilepsy revealed by aperiodic EEG dynamics
+[Authors and publication details to be added]
 ```
 
 ## License
