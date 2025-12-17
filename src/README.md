@@ -2,16 +2,13 @@
 
 This directory contains MATLAB analysis scripts for EEG/ECoG spectral analysis and the spectral parameterization pipeline.
 
-## Authors
+## Author
 
-Garima Chauhan¹, Kshitij Kumar¹, Deepti Chugh¹, Subramaniam Ganesh¹, Arjun Ramakrishnan¹,²
+Kshitij Kumar
 
-**Affiliations:**
-- ¹Department of Biological Sciences & Bioengineering, IIT Kanpur
-- ²Mehta Family Centre for Engineering in Medicine, IIT Kanpur
+**Affiliation:**
+- Department of Biological Sciences & Bioengineering, IIT Kanpur
 - Uttar Pradesh, India, 208016
-
-**Corresponding Author:** Arjun Ramakrishnan
 
 ---
 

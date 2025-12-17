@@ -1,11 +1,8 @@
 % Spectral Parameterization to CSV - Brainstorm Loaded Data
 %
-% Authors: Garima Chauhan¹, Kshitij Kumar¹, Deepti Chugh¹, Subramaniam Ganesh¹, Arjun Ramakrishnan¹,²
-% Affiliations:
-%   ¹Department of Biological Sciences & Bioengineering, IIT Kanpur
-%   ²Mehta Family Centre for Engineering in Medicine, IIT Kanpur
-%   Uttar Pradesh, India, 208016
-% Corresponding Author: Arjun Ramakrishnan
+% Author: Kshitij Kumar
+% Department of Biological Sciences & Bioengineering, IIT Kanpur
+% Uttar Pradesh, India, 208016
 %
 % Description:
 %   Processes spectral parameterization results from Brainstorm-loaded data
